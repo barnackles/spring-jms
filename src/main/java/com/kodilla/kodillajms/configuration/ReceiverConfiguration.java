@@ -5,8 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.messaging.converter.MessageConverter;
+import org.springframework.messaging.converter.SimpleMessageConverter;
+
 
 import javax.jms.ConnectionFactory;
+import javax.jms.JMSConnectionFactory;
 
 @Configuration
 public class ReceiverConfiguration {
@@ -18,5 +22,8 @@ public class ReceiverConfiguration {
         configurer.configure(factory, connection);
         return factory;
     }
+
+
+
 
 }
